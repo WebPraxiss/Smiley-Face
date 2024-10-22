@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smiley Face</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f8ff;
+            margin:0;
+            height:100vh;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aliceblue;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .circle{
+            background: radial-gradient(circle, yellow 60%, orange 100%);
+            border-radius: 50%;
+            height:300px;
+            width:300px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .eyes{
+            display: flex;
+            gap:80px
+        }
+        .eyeball{
+            background-color: black;
+            border-radius: 50%;
+            height:50px;
+            width:50px;
+            position:relative;
+        }
+        .eyeball::before {
+           content: '';
+           position: absolute;
+           top: 10px;
+           left: 10px;
+           background-color: white;
+           border-radius: 50%;
+           height: 15px;
+           width: 15px;
+        }
+        .lips{
+            background-color: rgb(219, 82, 82);
+            border-radius: 0 0 100px 100px;
+            height:80px;
+            width:150px;
+            position:relative;
+            top:20px;
+            border-top: 5px solid rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
+        }
+                /* Add some interaction for fun */
+                .circle:hover {
+            animation: smile 1s ease-in-out forwards;
+        }
+
+        @keyframes smile {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle">
+            <div class="eyes">
+                <div class="eyeball"></div>
+                <div class="eyeball"></div>
+            </div>
+            <div class="lips"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
